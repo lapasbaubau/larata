@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
@@ -13,24 +17,56 @@
       height: 100%;
       overflow: hidden;
       background: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
     }
 
     iframe {
+      flex: 1;
       width: 100%;
       height: 100%;
       border: none;
-
-      /* Lebih tajam dibanding scale */
       zoom: 0.80;
+    }
+
+    .fallback-bar {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 13px;
+      border-top: 1px solid #ffeeba;
+    }
+
+    .fallback-bar a {
+      color: #533f03;
+      font-weight: bold;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbz2IqrmzCn8Dorb1Fu7GaiiPxRspOrmL2i9XHVitJrXYirpsHWcqK8hS9jI8SAGldE/exec"
-    allow="camera; microphone; fullscreen">
-  </iframe>
+  <div class="container">
+    <iframe 
+      src="https://script.google.com/macros/s/AKfycbz2IqrmzCn8Dorb1Fu7GaiiPxRspOrmL2i9XHVitJrXYirpsHWcqK8hS9jI8SAGldE/exec"
+      allow="camera; microphone; fullscreen"
+      sandbox="allow-forms allow-modals allow-popups-to-escape-sandbox allow-popups allow-same-origin allow-scripts allow-downloads">
+    </iframe>
+
+    <div class="fallback-bar">
+      Mengalami kendala loading/proses tertahan? 
+      <a href="https://script.google.com/macros/s/AKfycbz2IqrmzCn8Dorb1Fu7GaiiPxRspOrmL2i9XHVitJrXYirpsHWcqK8hS9jI8SAGldE/exec" target="_blank" rel="noopener noreferrer">
+        Klik di sini untuk membuka aplikasi langsung di tab baru
+      </a>
+    </div>
+  </div>
 
 </body>
 </html>
